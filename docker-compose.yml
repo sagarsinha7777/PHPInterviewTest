@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/dockerfile-php.yml
+    command: sh -c "php /var/www/init.php && apache2-foreground"
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/
+    depends_on:
+      - database
+    environment:
+      - APP_DB_HOST=database
+      - APP_DB_USER=user
+      - APP_DB_PASSWORD=userpasswd
+      - APP_DB_NAME=database
+
+  database:
+    image: mysql/mysql-server:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - sqldata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpasswd
+      - MYSQL_DATABASE=database
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=userpasswd
+
+volumes:
+  sqldata:
