@@ -1,7 +1,7 @@
 # Test Project
 This is a partially completed project, it is written in an unorthodox style with odd naming convention.
 
-It is designed to test your ability to work on preexisting php code and be able to extend and solve problems without frameworks or external helpers.
+It is designed to test your ability to work on preexisting PHP code and be able to extend and solve problems without frameworks or external helpers.
 
 ## Naming convention:
 * All classes start with CLASS_ filenames and "C" for the Class name
@@ -28,7 +28,7 @@ It is designed to test your ability to work on preexisting php code and be able 
   * src/html/js/todos/todo.js
   * src/views/CLASS_TodosView.php (Add functionality to create a todo item)
 * Correct any errors in the current code if you find any
-* Bonus: Make sure the user is logged in before access to the /todo/ page
+* Bonus: Make sure the user is logged in before accessing the /todo/ page
 
 
 ## Questions will be asked in the interview:
@@ -38,10 +38,8 @@ It is designed to test your ability to work on preexisting php code and be able 
 * How could we do this better
 
 ## To run
-We will run the application with
+To start the application run the following in the root directory:
 ```shell script
 docker-compose up
 ```
-
-
-  
+Then navigate to `http://localhost:8000` in your browser
