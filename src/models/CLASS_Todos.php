@@ -11,7 +11,11 @@ class CTodos extends CModel {
     }
 
     public function createTodo(CTodo $oTodo){
-        //TODO add the item to the database
+        $arrInput = $oTodo->toDB();
+        unset($arrInput['id']);
+        $strColumns = "`" . implode("`,`", array_keys($arrInput)) . "`";
+        $strValues = "'" . implode("','", array_values($arrInput)) . "'";
+        return $this->querySQL("INSERT INTO Todos ($strColumns) VALUES ($strValues)");
     }
 
     public function listTodos(): array {
@@ -24,7 +28,7 @@ class CTodos extends CModel {
     }
 
     public function markDone($intId){
-        //TODO add the item to the database
+        return $this->querySQL("UPDATE Todos SET completed=1 where id=?", $intId);
     }
 }
 
