@@ -26,7 +26,16 @@ class CTodosView extends CView {
         }
         $strHTML .= "</div>";
 
-        //TODO add form for submitting new todo items here
+        $strHTML .= "<div>";
+        $strHTML .= "<h2>Add Item:</h2>";
+
+        $strHTML .= <<<EOD
+<form class="todo-form" method="post" action="?action=create">
+    <input type="text" name="title" placeholder="Title...">
+    <input type="submit" value="Add"/>
+</form>
+EOD;
+        $strHTML .= "</div>";
 
         $strHTML .= '<script language="javascript" type="text/javascript" src="/js/todos/todo.js"></script>';
        return $strHTML;

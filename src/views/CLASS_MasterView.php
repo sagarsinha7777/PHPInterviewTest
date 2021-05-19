@@ -9,6 +9,7 @@ class CMasterView extends CView{
                 <script language="javascript" type="text/javascript" src="/js/jquery-1.5.1.min.js"></script>
                 <script language="javascript" type="text/javascript" src="/js/jquery-ui-1.8.14.custom.min.js"></script>
                 <link type="text/css" rel="stylesheet" href="/css/base.css">
+                <link rel="shortcut icon" href="#">
                 </head>
                 <body>';
     }

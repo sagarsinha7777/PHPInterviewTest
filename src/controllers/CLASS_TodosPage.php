@@ -30,10 +30,13 @@ class CTodosPage extends CController {
     }
 
     public function create($arrGets, $arrPosts){
-        //TODO complete this section to add a todo item
+        $oTodo = new CTodo($arrPosts['title'], 0);
+        $this->oModel->createTodo($oTodo);
+
+        header("Location: /todos");
     }
 
     public function done($arrGets, $arrPosts){
-        //TODO complete this section to mark a todo item as done
+        $this->oModel->markDone($arrGets['id']);
     }
 }
